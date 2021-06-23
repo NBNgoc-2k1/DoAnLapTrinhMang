@@ -1,0 +1,11 @@
+C:\NetworkProgramming\FinalTermProject\FinalTermProject\obj\Debug\FinalTermProject.csprojAssemblyReference.cache
+C:\NetworkProgramming\FinalTermProject\FinalTermProject\obj\Debug\FinalTermProject.Dashboard.resources
+C:\NetworkProgramming\FinalTermProject\FinalTermProject\obj\Debug\FinalTermProject.Properties.Resources.resources
+C:\NetworkProgramming\FinalTermProject\FinalTermProject\obj\Debug\FinalTermProject.TCPClient.resources
+C:\NetworkProgramming\FinalTermProject\FinalTermProject\obj\Debug\FinalTermProject.csproj.GenerateResource.cache
+C:\NetworkProgramming\FinalTermProject\FinalTermProject\obj\Debug\FinalTermProject.csproj.CoreCompileInputs.cache
+C:\NetworkProgramming\FinalTermProject\FinalTermProject\bin\Debug\FinalTermProject.exe.config
+C:\NetworkProgramming\FinalTermProject\FinalTermProject\bin\Debug\FinalTermProject.exe
+C:\NetworkProgramming\FinalTermProject\FinalTermProject\bin\Debug\FinalTermProject.pdb
+C:\NetworkProgramming\FinalTermProject\FinalTermProject\obj\Debug\FinalTermProject.exe
+C:\NetworkProgramming\FinalTermProject\FinalTermProject\obj\Debug\FinalTermProject.pdb
