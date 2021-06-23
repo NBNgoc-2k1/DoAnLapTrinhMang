@@ -36,7 +36,7 @@ namespace FinalTermProject
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Can't connect to server\n Something went wrong" +
+                MessageBox.Show("Can't connect to server\n Something went wrong\n" +
                    ex.InnerException.Message , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -50,26 +50,26 @@ namespace FinalTermProject
                     URLbox.Text += "http://";
                 }
                 serverSocket.Send(SerializeMessage(URLbox.Text));
+                isURLExist = CheckIfURLExist(URLbox.Text);
+                if (!isURLExist)
+                {
+                    failResult.Visible = true;
+                    succeedResult.Visible = false;
+                }
+                else
+                {
+                    failResult.Visible = false;
+                    succeedResult.Visible = true;
+                }
             }
             else
             {
-                if (string.IsNullOrWhiteSpace(URLbox.Text) && URLbox.Text.Equals("about:blank"))
+                if (string.IsNullOrWhiteSpace(URLbox.Text) || URLbox.Text.Equals("about:blank"))
                 {
                     MessageBox.Show("Enter a valid URL.","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     URLbox.Focus();
                     return;
                 }
-            }
-            isURLExist = CheckIfURLExist(URLbox.Text); 
-            if (!isURLExist)
-            {
-                failResult.Visible = true;
-                succeedResult.Visible = false;
-            }
-            else
-            {
-                failResult.Visible = false;
-                succeedResult.Visible = true;
             }
         }
 
@@ -93,7 +93,7 @@ namespace FinalTermProject
             }
             catch(WebException ex)
             {
-                MessageBox.Show("Something went wrong" + ex.Message,
+                MessageBox.Show("Something went wrong\n" + ex.Message,
                     "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 isExist = false;
             }

@@ -39,13 +39,14 @@ namespace FinalTermProject
             // 
             // requestBtn
             // 
+            this.requestBtn.BackColor = System.Drawing.Color.LawnGreen;
             this.requestBtn.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.requestBtn.Location = new System.Drawing.Point(582, 48);
             this.requestBtn.Name = "requestBtn";
             this.requestBtn.Size = new System.Drawing.Size(146, 39);
             this.requestBtn.TabIndex = 0;
             this.requestBtn.Text = "Request";
-            this.requestBtn.UseVisualStyleBackColor = true;
+            this.requestBtn.UseVisualStyleBackColor = false;
             this.requestBtn.Click += new System.EventHandler(this.requestBtn_Click);
             // 
             // URLbox
@@ -108,6 +109,7 @@ namespace FinalTermProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(800, 219);
             this.Controls.Add(this.failResult);
             this.Controls.Add(this.label2);

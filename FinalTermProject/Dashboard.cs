@@ -32,11 +32,11 @@ namespace FinalTermProject
 
         void OpenURLDefaultBrowser()
         {
-            if (client.Connected)
+            while (client.Connected)
             {
                 Byte[] recvData = new byte[1024 * 5000];
                 client.Receive(recvData);
-                desiredURL = (string)DeserializeMessage(recvData);
+                desiredURL = DeserializeMessage(recvData);
                 try
                 {
                     Process requestURL = new Process();
@@ -46,18 +46,27 @@ namespace FinalTermProject
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show("Something went wrong" + ex.InnerException.Message, 
+                    MessageBox.Show("Something went wrong\n" + ex.Message, 
                         "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 };
             }
         }
 
-        private object DeserializeMessage(byte[] data)
+        private string DeserializeMessage(byte[] data)
         {
-            MemoryStream ms = new MemoryStream(data);
-            BinaryFormatter binaryFormatter = new BinaryFormatter();
+            try
+            {
+                MemoryStream ms = new MemoryStream(data);
+                BinaryFormatter binaryFormatter = new BinaryFormatter();
 
-            return binaryFormatter.Deserialize(ms);
+                return (string)binaryFormatter.Deserialize(ms);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Something went wrong\n" + ex.Message,
+    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return "";
+            }
         }
 
         private void StartUnsafeThread()
@@ -90,6 +99,10 @@ namespace FinalTermProject
             {
                 ipServer = IPAddress.Parse(this.ipaddBox.Text);
                 this.portServer = int.Parse(portBox.Text);
+                Thread serverThread = new Thread(StartUnsafeThread);
+                serverThread.Start();
+                tcpserver.Enabled = false;
+                tcpclient.Visible = true;
             }
             else
             {
@@ -106,9 +119,6 @@ namespace FinalTermProject
                 }
             }
 
-            Thread serverThread = new Thread(StartUnsafeThread);
-            serverThread.Start();
-            tcpserver.Enabled = false;
         }
 
         private void tcpclient_Click(object sender, EventArgs e)

@@ -39,7 +39,7 @@ namespace FinalTermProject
             // 
             // tcpserver
             // 
-            this.tcpserver.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tcpserver.BackColor = System.Drawing.SystemColors.Control;
             this.tcpserver.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tcpserver.Location = new System.Drawing.Point(447, 61);
             this.tcpserver.Name = "tcpserver";
@@ -51,7 +51,7 @@ namespace FinalTermProject
             // 
             // tcpclient
             // 
-            this.tcpclient.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tcpclient.BackColor = System.Drawing.Color.BurlyWood;
             this.tcpclient.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tcpclient.Location = new System.Drawing.Point(239, 269);
             this.tcpclient.Name = "tcpclient";
@@ -59,6 +59,7 @@ namespace FinalTermProject
             this.tcpclient.TabIndex = 8;
             this.tcpclient.Text = "Open TCP Client";
             this.tcpclient.UseVisualStyleBackColor = false;
+            this.tcpclient.Visible = false;
             this.tcpclient.Click += new System.EventHandler(this.tcpclient_Click);
             // 
             // label2
@@ -103,6 +104,7 @@ namespace FinalTermProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Cornsilk;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
