@@ -27,7 +27,7 @@ namespace FinalTermProject
         Socket listenerSocket;
         public IPAddress ipServer;
         public int portServer;
-        string desiredURL;
+        string desiredURL = "";
         public bool isURLExist = true;
 
         void OpenURLDefaultBrowser()
@@ -37,6 +37,8 @@ namespace FinalTermProject
                 Byte[] recvData = new byte[1024 * 5000];
                 client.Receive(recvData);
                 desiredURL = DeserializeMessage(recvData);
+                if (desiredURL == "")
+                    return;
                 try
                 {
                     Process requestURL = new Process();
@@ -61,10 +63,8 @@ namespace FinalTermProject
 
                 return (string)binaryFormatter.Deserialize(ms);
             }
-            catch(Exception ex)
+            catch
             {
-                MessageBox.Show("Something went wrong\n" + ex.Message,
-    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return "";
             }
         }

@@ -47,7 +47,7 @@ namespace FinalTermProject
             {
                 if (!URLbox.Text.StartsWith("http://") && !URLbox.Text.StartsWith("https://"))
                 {
-                    URLbox.Text += "http://";
+                   URLbox.Text = URLbox.Text.Insert(0, "http://");
                 }
                 serverSocket.Send(SerializeMessage(URLbox.Text));
                 isURLExist = CheckIfURLExist(URLbox.Text);
