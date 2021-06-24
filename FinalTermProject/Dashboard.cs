@@ -106,17 +106,17 @@ namespace FinalTermProject
             }
             else
             {
-                if (isPortValid == false)
-                {
-                    MessageBox.Show("Please enter port is integer!!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    portBox.Focus();
-                }
                 if (isIPValid == false)
                 {
                     MessageBox.Show("Please enter IP address according to pattern A.B.C.D with A,B,C,D range from 0 to 255!!!",
                     "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     ipaddBox.Focus();
                 }
+                if (isPortValid == false)
+                {
+                    MessageBox.Show("Please enter port is integer!!!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    portBox.Focus();
+                }               
             }
 
         }
